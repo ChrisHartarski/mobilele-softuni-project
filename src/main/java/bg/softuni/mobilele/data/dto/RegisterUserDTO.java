@@ -1,21 +1,26 @@
 package bg.softuni.mobilele.data.dto;
 
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class RegisterUserDTO {
-    @NotNull
-    @Size(min = 2, max = 20)
+    @NotEmpty(message = "{users.register.firstName.notEmpty}")
+    @Size(min = 2, max = 20,
+        message = "{users.register.firstName.length}")
     private String firstName;
-    @NotNull
-    @Size(min = 2, max = 20)
+    @NotEmpty (message = "{users.register.lastName.notEmpty}")
+    @Size(min = 2, max = 20,
+        message = "{users.register.lastName.length}")
     private String lastName;
-    @NotNull
-    @Size(min = 2, max = 20)
+    @NotEmpty (message = "{users.register.username.notEmpty}")
+    @Size(min = 2, max = 20,
+        message = "{users.register.username.length}")
     private String username;
-    @NotNull
-    @Size(min = 2, max = 20)
+    @NotEmpty (message = "{users.register.password.notEmpty}")
+    @Size(min = 2, max = 20,
+        message = "{users.register.password.length}")
     private String password;
 
     public String getFirstName() {
